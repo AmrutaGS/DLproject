@@ -1,55 +1,58 @@
 # Advanced Deep Learning Models for Mental Stress Classification Using GAF Encoding
 
-Overview
-This repository presents a deep learning-based approach to classify stress states using physiological time-series data. The raw data is first converted into Gramian Angular Field (GAF) images to preserve temporal information. The project implements and compares three deep learning architectures: an enhanced baseline Convolutional Neural Network (CNN), a hybrid CNN-Gated Recurrent Unit (CNN-GRU) model, and a Bidirectional Long Short-Term Memory (BiLSTM) network. These models are trained and evaluated on two well-known benchmark datasets — WESAD and SWELL — to identify and differentiate between various stress levels.
+## Overview
 
-#Repository Contents
-This repository is organized into Jupyter notebooks, each dedicated to specific models or types of evaluation.
+This repository presents a deep learning-based approach to classify stress states using physiological time-series data. The raw data is first transformed into **Gramian Angular Field (GAF)** images to preserve temporal patterns in a visual form. 
 
-#Core Notebooks (Per Model)
-Each core notebook includes three primary components:
+The project implements and compares four architectures:
+- An enhanced baseline **Convolutional Neural Network (CNN)**
+- A hybrid **CNN-Gated Recurrent Unit (CNN-GRU)** model
+- A **Long Short-Term Memory (LSTM)** network
+- A **Bidirectional Long Short-Term Memory (BiLSTM)** network
 
-GAF Encoding: The time-series data from physiological signals is transformed into GAF images to capture temporal dynamics in a spatial format.
+These models are trained and evaluated on two benchmark datasets — **WESAD** and **SWELL** — for identifying and differentiating between various mental stress levels.
 
-Model Architecture: The encoded images are used to train deep learning models — either CNN, CNN-GRU, or BiLSTM — optimized for classification tasks.
+---
 
-Evaluation Visualizations: Each notebook presents key visual analysis tools to assess performance, including:
+## 📂 Repository Contents
 
-Training and validation accuracy and loss curves,
+This repository is organized into Jupyter notebooks, categorized based on model type and evaluation focus.
 
-Confusion matrix to evaluate prediction distributions,
+### Core Notebooks (Per Model)
 
-Feature importance plots (e.g., SHAP or learned weights) to understand model decisions,
+Each core notebook includes:
 
-ROC curves to visualize classification thresholds and AUC.
+- **GAF Encoding**: Time-series physiological signals are encoded into GAF images for spatial pattern recognition.
+- **Model Architecture**: Deep learning models — CNN, CNN-GRU, LSTM, or BiLSTM — are implemented to perform classification.
+- **Evaluation Visualizations**:
+  - Accuracy and loss curves (training vs validation)
+  - Confusion matrix
+  - Feature importance plots (e.g., SHAP, gradient-based methods)
+  - ROC curves with AUC
 
-These notebooks can be used for training and evaluation on both the WESAD and SWELL datasets.
+> These notebooks are compatible with both the **WESAD** and **SWELL** datasets.
 
-#Trend Analysis Notebooks (*_trend.ipynb)
-The trend analysis notebooks are designed for in-depth performance diagnostics across different classes and models. They include:
+---
 
-Class-wise Performance Bar Graphs: These visualizations show how each model performs for each stress class in terms of accuracy, precision, recall, and F1-score.
+### Trend Analysis Notebooks (`*_trend_.ipynb`)
 
-Error-Based Evaluation Metrics: To further assess model performance, these notebooks compute:
+These notebooks provide **in-depth model diagnostics**:
 
-Mean Absolute Error (MAE),
+- **Class-wise Performance Visualizations**:
+  - Bar graphs for class-wise accuracy, precision, recall, and F1-score
+- **Regression Error Metrics**:
+  - Mean Absolute Error (MAE)
+  - Mean Absolute Percentage Error (MAPE)
+  - Root Mean Square Error (RMSE)
+These analyses offer deeper insights into each model's performance for every stress category and help identify patterns of over- or under-performance.
+---
+## Requirements
 
-Mean Absolute Percentage Error (MAPE),
+Make sure you are using **Python 3.x**.
 
-Root Mean Square Error (RMSE).
+### Required Libraries
 
-These metrics offer valuable insights into how well the models generalize and where they may underperform across the dataset classes.                                                         
-#Requirements
-Python 3.x
+Install the following dependencies to run the notebooks:
+pip install tensorflow numpy matplotlib scikit-learn pandas seaborn pyts
 
-#Required Libraries:
 
-TensorFlow 
-
-NumPy
-
-Matplotlib
-
-OpenCV
-
-scikit-learn
