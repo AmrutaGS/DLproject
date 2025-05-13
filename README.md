@@ -14,7 +14,7 @@ These models are trained and evaluated on two benchmark datasets — **WESAD** a
 
 ---
 
-## 📂 Repository Contents
+## Repository Contents
 
 This repository is organized into Jupyter notebooks, categorized based on model type and evaluation focus.
 
